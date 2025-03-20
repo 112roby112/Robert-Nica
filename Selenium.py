@@ -27,6 +27,11 @@ print(title)
 with soft_assertions():
     assert_that(title).contains("Laptop")  # Titlul nu va conține "xxx", deci testul va eșua
 
+price = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.XPATH, "//p[@class='product-new-price']"))
+)
+print(price.text)
+
 # click on log-in button
 login = driver.find_element(By.ID, "my_account").click()
 email_add = driver.find_element(By.ID, "user_login_email").send_keys('robert.nica94@gmail.com')
