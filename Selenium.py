@@ -27,6 +27,22 @@ print(title)
 with soft_assertions():
     assert_that(title).contains("Laptop")  # Titlul nu va conține "xxx", deci testul va eșua
 
+# click on log-in button
+login = driver.find_element(By.ID, "my_account").click()
+email_add = driver.find_element(By.ID, "user_login_email").send_keys('robert.nica94@gmail.com')
+continue_login = driver.find_element(By.ID, "user_login_continue").click()
+
+login_pass = WebDriverWait(driver, 10).until(
+    EC.presence_of_element_located((By.ID, "user_login_password"))
+).send_keys('parola123')
+continue_login_passw = driver.find_element(By.ID, "user_login_continue").click()
+# Verifică dacă există un element care confirmă login-ul
+try:
+    driver.find_element(By.ID, "logout")  # Înlocuiește cu un ID valid de pe pagina de după login
+    print("Autentificare reușită!")
+except:
+    print("Autentificare eșuată!")
+
 driver.quit()
 
 
