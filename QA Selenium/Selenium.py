@@ -25,7 +25,7 @@ print(title)
 
 
 with soft_assertions():
-    assert_that(title).contains("Laptop")  # Titlul nu va conține "xxx", deci testul va eșua
+    assert_that(title).contains("Laptop")  
 
 price = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.XPATH, "//p[@class='product-new-price']"))
@@ -41,17 +41,11 @@ login_pass = WebDriverWait(driver, 10).until(
     EC.presence_of_element_located((By.ID, "user_login_password"))
 ).send_keys('parola123')
 continue_login_passw = driver.find_element(By.ID, "user_login_continue").click()
-# Verifică dacă există un element care confirmă login-ul
+
 try:
-    driver.find_element(By.ID, "logout")  # Înlocuiește cu un ID valid de pe pagina de după login
+    driver.find_element(By.ID, "logout")
     print("Autentificare reușită!")
 except:
     print("Autentificare eșuată!")
 
 driver.quit()
-
-
-#help_button = driver.find_element(By.CLASS_NAME, "navbar-aux-help-link")
-#Oferta_zilei = driver.find_element(By.LINK_TEXT, "Oferta Zilei")
-#Logo = driver.find_element(By.XPATH, '//*[@id="masthead"]/div/div/div[1]/a/img')
-#search_bar.send_keys("laptop")
