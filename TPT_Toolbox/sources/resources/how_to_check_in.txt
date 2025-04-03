@@ -1,0 +1,35 @@
+HOW TO BE ABLE TO MAKE THE EXECUTABLE
+1. open cmd
+2. type "c:\tools\python\3.6.5\python.exe -m pip install --upgrade pip"
+3. download "PyInstaller-3.6-py2.py3-none-any.whl" from: https://www.lfd.uci.edu/~gohlke/pythonlibs/
+4. cd <path_where_file_is_saved>, e.g. "cd C:\Users\D60L0RK\Downloads"
+5. type "python -m pip install PyInstaller-3.6-py2.py3-none-any.whl"
+6. type "pip install auto-py-to-exe"
+
+
+
+HOW TO MAKE THE EXECUTABLE FILE
+1. open cmd
+2. type "auto-py-to-exe"
+3. use interface
+
+3.1. from button "Browse" select file "tpt_toolbox.py" from "C:\Work\ChassisControl_Process\01_Engineering_Process\03_Test\03_Test_Tools\46_TPT_Toolbox\sources"
+3.2. select option "One File"  
+3.3. select option "Console Based" due to Tab7 Spec. Delta
+3.4. click on "Icon" option and afterwards button "Browse"
+3.5. select file "icon.ico" from "C:/Work/ChassisControl_Process/01_Engineering_Process/03_Test/03_Test_Tools/46_TPT_Toolbox/sources/resources"
+3.6. click on button "CONVERT .PY TO .EXE"
+3.7. click on button "OPEN OUTPUT FOLDER"
+
+4. copy file "tpt_toolbox.exe" to "C:\Work\ChassisControl_Process\01_Engineering_Process\03_Test\03_Test_Tools\46_TPT_Toolbox"
+5. check-in tpt_toolbox.exe
+6. zip source files into .source.zip
+7. copy sources.zip to "..\Work\ChassisControl_Process\01_Engineering_Process\03_Test\03_Test_Tools\46_TPT_Toolbox"
+8. check-in sources.zip
+9. enjoy the tool !
+
+
+
+LIBRARIES NEEDED:
+1. pip install openpyxl
+2. pip install pandas
